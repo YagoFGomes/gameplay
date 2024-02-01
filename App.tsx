@@ -5,27 +5,14 @@ import {
     Rajdhani_500Medium,
     Rajdhani_700Bold,
 } from "@expo-google-fonts/rajdhani";
-// import AppLoading from "expo-app-loading";
 
-// export default function App() {
-//     const [fontsLoaded] = useFonts({
-//         Inter_400Regular,
-//         Inter_500Medium,
-//         Rajdhani_500Medium,
-//         Rajdhani_700Bold,
-//     });
-
-//     if (!fontsLoaded) {
-//         return <AppLoading />;
-//     }
-//     return <Signin />;
-// }
-
-import React, { useCallback, useEffect } from "react";
+import React, { useEffect } from "react";
 
 import * as SplashScreen from "expo-splash-screen";
 
 import { Signin } from "./src/screens/Signin";
+import { StatusBar } from "expo-status-bar";
+import { Background } from "./src/components/Background";
 
 export default function App() {
     const [fontsLoaded] = useFonts({
@@ -49,5 +36,14 @@ export default function App() {
         return null;
     }
 
-    return <Signin />;
+    return (
+        <Background>
+            <StatusBar
+                style="light"
+                backgroundColor="transparent"
+                translucent
+            />
+            <Signin />
+        </Background>
+    );
 }
