@@ -9,7 +9,7 @@ interface Props {
 }
 export function SigninScreen({ navigation }: Props) {
     function handleSigIn() {
-        navigation.navigate("Home");
+        // navigation.push("Home");
     }
 
     return (
@@ -33,7 +33,7 @@ export function SigninScreen({ navigation }: Props) {
                 <ButtonIcon
                     title="Entrar com discord"
                     activeOpacity={0.7}
-                    onPress={() => handleSigIn()}
+                    onPress={() => handleSigIn}
                 />
             </View>
         </View>
