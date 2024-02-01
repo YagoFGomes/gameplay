@@ -2,14 +2,13 @@ import { Text, View, Image } from "react-native";
 import { styles } from "./styles";
 import Illustration from "../../assets/illustration.png";
 import { ButtonIcon } from "../../components/ButtonIcon";
-import { useNavigation } from "@react-navigation/native";
 import { NavigationProp, ParamListBase } from "@react-navigation/native";
 interface Props {
     navigation: NavigationProp<ParamListBase>;
 }
 export function SigninScreen({ navigation }: Props) {
     function handleSigIn() {
-        // navigation.push("Home");
+        navigation.navigate("Home");
     }
 
     return (
@@ -33,7 +32,7 @@ export function SigninScreen({ navigation }: Props) {
                 <ButtonIcon
                     title="Entrar com discord"
                     activeOpacity={0.7}
-                    onPress={() => handleSigIn}
+                    onPress={() => handleSigIn()}
                 />
             </View>
         </View>
